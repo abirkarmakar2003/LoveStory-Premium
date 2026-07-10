@@ -4,6 +4,8 @@ const CONFIG = {
 
   senderName: "Abir ❤️",
 
+  loveStartDate: "2026-07-10T00:00:00",
+
   welcomeTitle: "Hi",
 
   question: "Will you go on a date with me? ❤️",

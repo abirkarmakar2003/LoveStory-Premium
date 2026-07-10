@@ -255,28 +255,19 @@ function typeWriter() {
 }
 function finalScreen(){
 
-    saveResponse({
-    receiver: CONFIG.receiverName,
-    sender: CONFIG.senderName,
-    date: selectedDate,
-    foods: selectedFoods,
-    activity: selectedActivity,
-    time: new Date().toLocaleString()
-});
-
     document.querySelector(".card").innerHTML = `
 
-    <h1 class="title">
-    ❤️Thank You❤️
-    </h1>
+    <h1 class="title">❤️ Thank You ❤️</h1>
 
     <p class="subtitle">
-
-    You are amazing ✨
-
+        You are amazing ✨
     </p>
 
+    <h2 id="loveTimer" style="color:white;"></h2>
+
     `;
+
+    startLoveTimer();
 
 }
 window.onload = function () {
@@ -442,5 +433,34 @@ function showCat(){
         </button>
 
     `;
+
+}
+function startLoveTimer(){
+
+    const start = new Date(CONFIG.loveStartDate);
+
+    function update(){
+
+        const now = new Date();
+
+        const diff = now - start;
+
+        const days = Math.floor(diff / (1000*60*60*24));
+
+        const hours = Math.floor((diff / (1000*60*60)) % 24);
+
+        const minutes = Math.floor((diff / (1000*60)) % 60);
+
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("loveTimer").innerHTML =
+        `❤️ Together For ❤️<br>
+        ${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+
+    }
+
+    update();
+
+    setInterval(update,1000);
 
 }
