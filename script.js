@@ -325,7 +325,7 @@ const heart=document.createElement("div");
 
 heart.className="floatHeart";
 
-const hearts=["❤️","💖","💕","💗","💘","💞"];
+const hearts=["❤️","💖","💕","💗","💘","💞","❤️‍🔥",];
 
 heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
 
