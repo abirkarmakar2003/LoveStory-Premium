@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LoveStory Admin</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:30px;
+    background:#111;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+h1{
+    text-align:center;
+    color:#ff4da6;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+}
+
+th,td{
+    border:1px solid #444;
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background:#ff4da6;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#222;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loginBox">
+
+<h1>❤️ LoveStory Admin ❤️</h1>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+style="
+padding:12px;
+width:250px;
+border-radius:8px;
+border:none;
+font-size:16px;
+">
+
+<br><br>
+
+<button
+onclick="checkLogin()"
+style="
+padding:12px 25px;
+font-size:16px;
+border:none;
+border-radius:8px;
+background:#ff4da6;
+color:white;
+cursor:pointer;
+">
+
+Login 🔐
+
+</button>
+
+</div>
+
+<div id="adminPanel" style="display:none;">
+
+<h1>❤️ LoveStory Admin ❤️</h1>
+<p id="totalResponse"
+style="
+font-size:18px;
+text-align:center;
+margin-bottom:20px;
+color:#ffb3d9;
+">
+❤️ Total Responses : 0
+</p>
+
+<input
+type="text"
+id="searchBox"
+placeholder="🔍 Search Receiver or Sender..."
+onkeyup="searchTable()"
+style="
+width:100%;
+padding:12px;
+margin-bottom:20px;
+border-radius:8px;
+border:none;
+font-size:16px;
+">
+
+<table>
+
+<thead>
+<tr>
+<th>Receiver</th>
+<th>Sender</th>
+<th>Date</th>
+<th>Foods</th>
+<th>Activity</th>
+<th>Time</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="tableData">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
